@@ -2,7 +2,7 @@ Bikeshare
 ======
 Entrega do primeiro projeto do nanodegree [*Fundamentos de AI & Machine Learning*](https://br.udacity.com/course/fundamentos-machine-learning--nd109)  da [Udacity](https://br.udacity.com/)
 
-####Rodando o projeto
+Rodando o projeto
 - requisitos: python (utilizado 3.6.4)
 
 ```
