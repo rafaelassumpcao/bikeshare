@@ -196,7 +196,27 @@ def find_median(list):
     length = len(list)
     position = (length + 1) // 2
     if length % 2 == 0: return (list[position] + list[position -1]) / 2
-    return list[position-1]   
+    return list[position-1]  
+
+def quicksort(list):
+    """
+    implementação simplificada do quicksort recursivo baseado nos estudos do artigo na wikipedia
+    https://en.wikipedia.org/wiki/Quicksort
+    Argumentos:
+        list: Lista a ser ordenada do tipo inteiro.
+    Retorna:
+        uma nova lista ordenada.
+    """
+    pivot = list[len(list) // 2];
+    if len(list) > 0:
+        left = [num for num in list if num < pivot]
+        right = [num for num in list if num > pivot]
+        if len(left) > 1:
+            left = quicksort(left)
+        if len(right) > 1:
+            right = quicksort(right)
+        return left + [pivot] * list.count(pivot) + right
+    return [] 
 
 
 trip_duration_list = column_to_list(data_list, 2)
@@ -256,7 +276,6 @@ def count_items(column_list):
     item_types = set(column_list)
     count_items = [len(column_list)]
     return item_types, count_items
-
 
 if answer == "yes":
     # ------------ NÃO MUDE NENHUM CÓDIGO AQUI ------------
