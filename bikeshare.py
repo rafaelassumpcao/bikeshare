@@ -216,7 +216,22 @@ def quicksort(list):
         if len(right) > 1:
             right = quicksort(right)
         return left + [pivot] * list.count(pivot) + right
-    return [] 
+    return []
+
+def sum_and_count(list):
+    """
+    Função pra somar todos os elementos de uma lista e contar    
+    Argumentos:
+        list: Lista  do tipo inteiro ou float.
+    Retorna:
+        um [inteiro|float, inteiro] com a soma total.
+    """
+    counter = 0
+    total = 0
+    for num in list:
+        counter +=1
+        total += num
+    return [total, counter]
 
 
 trip_duration_list = column_to_list(data_list, 2)
@@ -228,10 +243,11 @@ mean_trip = 0.
 median_trip = 0.
 
 #como vou precisar ordenar a lista pra calcular a mediana, uso a ordenação pra obter max e min
-sorted_trip_duration_list = sorted(trip_duration_list)
+sorted_trip_duration_list = quicksort(trip_duration_list)
+total, size = sum_and_count(sorted_trip_duration_list)
 min_trip = sorted_trip_duration_list[0]
 max_trip = sorted_trip_duration_list[-1]
-mean_trip = sum(trip_duration_list) / len(trip_duration_list)
+mean_trip = total / size
 median_trip = find_median(sorted_trip_duration_list)
 
 
