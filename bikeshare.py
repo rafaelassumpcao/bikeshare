@@ -32,15 +32,15 @@ print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
-"""
-função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
-Argumentos:
-    data: Lista base.
-    index: posicao da coluna para transformar em lista
-Retorna:
-    lista de features.
-"""
 def column_to_list(data, index):
+    """
+    função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
+    Argumentos:
+        data: Lista base.
+        index: posicao da coluna para transformar em lista
+    Retorna:
+        lista de features.
+    """
     return [line[index] for line in data]
 
 
@@ -71,14 +71,14 @@ assert male == 935854 and female == 298784, "TAREFA 4: A conta não bate."
 
 input("Aperte Enter para continuar...")
 # TAREFA 5
-"""
-Função que conta cada tipo de genero
-Argumentos:
-    data_list: Lista dos tipos de genero do tipo string.
-Retorna:
-    lista de inteiros com duas posicoes.
-"""
 def count_gender(data_list):
+    """
+    Função que conta cada tipo de genero
+    Argumentos:
+        data_list: Lista dos tipos de genero do tipo string.
+    Retorna:
+        lista de inteiros com duas posicoes.
+    """
     male = 0
     female = 0
     for feature in column_to_list(data_list, -2):
@@ -86,14 +86,14 @@ def count_gender(data_list):
         elif feature == 'Female': female +=1
     return [male, female]
 
-"""
-Função que conta cada tipo de usuario
-Argumentos:
-    data_list: Lista dos tipos de usuario do tipo string.
-Retorna:
-    lista de inteiros com duas posicoes.
-"""
 def count_user_type(data_list):
+    """
+    Função que conta cada tipo de usuario
+    Argumentos:
+        data_list: Lista dos tipos de usuario do tipo string.
+    Retorna:
+        lista de inteiros com duas posicoes.
+    """
     male = 0
     female = 0
     for feature in column_to_list(data_list, -3):
@@ -116,14 +116,14 @@ input("Aperte Enter para continuar...")
 # TAREFA 6
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
-"""
-Função que retorna o genero mais popular em uma lista de generos
-Argumentos:
-    data_list: Lista de generos do tipo string.
-Retorna:
-    'Masculino' | 'Feminino' | 'Igual'.
-"""
 def most_popular_gender(data_list):
+    """
+    Função que retorna o genero mais popular em uma lista de generos
+    Argumentos:
+        data_list: Lista de generos do tipo string.
+    Retorna:
+        'Masculino' | 'Feminino' | 'Igual'.
+    """
     male, female = count_gender(data_list)
     answer = ""
     if male > female: answer += 'Masculino'
@@ -184,14 +184,15 @@ input("Aperte Enter para continuar...")
 # TAREFA 9
 # TODO: Ache a duração de viagem Mínima, Máxima, Média, e Mediana.
 # Você não deve usar funções prontas parTODO isso, como max() e min().
-"""
-Função que retorna a mediana a partir de uma lista ordenada
-Argumentos:
-    list: Lista ordenada do tipo inteiro.
-Retorna:
-    a mediana dos valores dessa lista em float.
-"""
+
 def find_median(list):
+    """
+    Função que retorna a mediana a partir de uma lista ordenada
+    Argumentos:
+        list: Lista ordenada do tipo inteiro.
+    Retorna:
+        a mediana dos valores dessa lista em float.
+    """
     length = len(list)
     position = (length + 1) // 2
     if length % 2 == 0: return (list[position] + list[position -1]) / 2
@@ -243,15 +244,6 @@ input("Aperte Enter para continuar...")
 # TAREFA 11
 # Volte e tenha certeza que você documenteou suas funções. Explique os parâmetros de entrada, a saída, e o que a função faz. Exemplo:
 # def new_function(param1: int, param2: str) -> list:
-"""
-Função de exemplo com anotações.
-Argumentos:
-    param1: O primeiro parâmetro.
-    param2: O segundo parâmetro.
-Retorna:
-    Uma lista de valores x.
-
-"""
 
 input("Aperte Enter para continuar...")
 # TAREFA 12 - Desafio! (Opcional)
